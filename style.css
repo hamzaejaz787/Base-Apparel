@@ -1,147 +1,151 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1rem;
-    background: hsl(0, 100%, 98%);
-}
-header{
-    margin: 2em;
-}
-
-.intro__main{
-    margin: 0 0 5em 0;
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background: url(./images/bg-pattern-desktop.svg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.hero-img{
-    width: 100%;
+.logo {
+  margin-top: 5%;
+  margin-left: 10%;
 }
-.hero-img-desktop{
+
+h1 {
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  color: hsl(0, 6%, 24%);
+}
+
+h1 span {
+  font-weight: 300;
+  color: hsl(0, 36%, 70%);
+}
+
+p {
+  width: 35%;
+  line-height: 1.5;
+  color: hsl(0, 36%, 70%);
+  margin: 1.5em 0;
+}
+
+.mobile-image {
+  display: none;
+}
+
+.content {
+  margin-top: 8%;
+  margin-left: 10%;
+  position: relative;
+}
+
+.intro-background {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.intro-background img {
+  height: 100vh;
+  width: 45vw;
+}
+
+.input {
+  position: relative;
+}
+
+.intro-email {
+  width: 26%;
+  padding: 1em;
+  border-radius: 50px;
+  background: hsl(0, 100%, 98%);
+  border: 1px solid rgba(65, 58, 58, 0.3);
+  outline: none;
+}
+
+.intro-email:focus {
+  border-color: hsl(0, 6%, 24%);
+}
+
+::placeholder {
+  color: rgba(206, 151, 151, 0.623);
+}
+
+.arrow-btn {
+  border: none;
+  background: hsl(0, 74%, 74%);
+  padding: 0.8em 2.75em;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  left: 20%;
+  color: rgb(65, 58, 58);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.arrow-btn:hover,
+.arrow-btn:focus {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  background: hsl(0, 80%, 86%);
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+  p {
+    font-size: 0.75rem;
+  }
+  .intro-email {
+    width: 40%;
+  }
+  .arrow-btn {
+    padding: 0.8em 2em;
+    left: 35%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  body {
+    overflow: visible;
+  }
+  .logo {
+    margin: 8% 0 8% 10%;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .intro-background {
     display: none;
-}
-
-.intro-wrapper{
-    margin: 3.5em 0em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  }
+  .mobile-image {
+    display: block;
+  }
+  .mobile-image img {
     width: 100%;
-}
-    .intro-title{
-        font-size: 2.5rem;
-        line-height: 1.125em;
-        letter-spacing: 0.2em;
-        text-align: center;
-        text-transform: uppercase;
-        color: hsl(0, 6%, 24%);
-        margin-bottom: 0.5em;
-    }
-    .intro-title span{
-        font-weight: 300;
-        color: hsl(0, 36%, 70%);
-    }
-
-    p{
-        color: hsl(0, 36%, 70%);
-        line-height: 1.4em;
-        text-align: center;
-        margin: auto 0.5em;
-    }
-.input{
-    margin: 0 1em;
-}
-.intro-email{
-    border: 1.5px solid hsl(0, 12%, 69%);
-    padding: 1.2em;
-    width: 100%;
-    border-radius: 100px;
-    outline: none;
-    color: hsl(0, 6%, 24%);
-    background: hsl(0, 100%, 98%);
-    position: relative;
-}
-
-.email-arrow{
-    position: absolute;
-    right: 4%;
-    border: none;
-    border-radius: 100px;
-    padding: 0.95em 1.7em;
-    background: hsl(0, 74%, 74%);
-    box-shadow: 0 10px 10px 0 rgba(65, 58, 58, 0.2);
-    cursor: pointer;
-}
-
-    .email-arrow:hover{
-        background: hsl(0, 80%, 86%);
-    }
-    .email-arrow:active{
-        background: hsl(0, 75%, 89%);
-    }
-
-@media screen and (min-width: 500px){
-    .intro-title{
-        font-size: 3rem;
-    }
-    .intro-text{
-        font-size: 1.35rem;
-    }
-    .email-arrow{
-        right: 0;
-    }
-}
-
-@media screen and (min-width: 950px){
-    body{
-        background: url(./images/bg-pattern-desktop.svg);
-        background-repeat: no-repeat;
-    }
-    header{
-        margin-left: 5em;
-    }
-        .logo{
-            cursor: pointer;
-        }
-    .intro-title{
-        font-size: 4.5rem;
-    }
-    .intro__main{
-        display: flex;
-        margin-left: 5em;
-        margin-bottom: 0;
-    }
-    .hero-img{
-        display: none;
-    }
-    .hero-img-desktop{
-        display: block;
-        height: auto;
-        margin-top: -6.5em;
-    }
-    
-    
-    .intro-wrapper{
-        align-items: flex-start;
-        margin: 4.5em 0;
-    }
-        .intro-text, .intro-title{
-            text-align: left;
-        }
-        .intro-title{
-            line-height: 1em;
-        }
-        .intro-text{
-            width: 80%;
-        }
-        .intro-email{
-            width: 60%;
-        }
-        .email-arrow{
-            right: 65%;
-            padding: 0.95em 2.25em;
-        }
+  }
+  .content {
+    text-align: center;
+    margin: 2em auto;
+  }
+  p {
+    width: 70%;
+    text-align: center;
+    margin: 1.5em auto;
+  }
+  .intro-email {
+    width: 70%;
+  }
+  .arrow-btn {
+    left: 70%;
+  }
 }
